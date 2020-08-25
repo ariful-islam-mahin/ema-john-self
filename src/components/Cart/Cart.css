@@ -1,0 +1,16 @@
+.cart{
+    margin-left: 5px; 
+}
+.cart table{
+    font-size:12px;
+    font-weight: bold;
+}
+.order-summary{
+    text-align: center;
+}
+.total-row{
+    color: #b12704;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22px;
+}

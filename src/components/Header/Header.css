@@ -1,0 +1,22 @@
+.logo{
+    height: 80px;
+    margin: 20px 0px;
+}
+.logo-parent{
+    text-align: center;
+}
+nav{
+    background-color: black;
+    padding-left: 20px;
+}
+nav a{
+    color: white;
+    text-decoration:none;
+    font-size: 16px;
+    padding: 8px 10px;
+    display: inline-block;
+}
+nav a:hover{
+    background-color: lightgray;
+    color: black;
+}
