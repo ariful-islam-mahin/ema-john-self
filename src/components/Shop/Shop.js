@@ -4,19 +4,23 @@ import Cart from '../Cart/Cart'
 import fakeData from '../../fakeData/index'
 import './Shop.css'
 import {useState} from 'react'
+import { addToDatabaseCart } from '../../utilities/databaseManager';
 
 const Shop = () => {
     const first10 = fakeData.slice(0, 10);
     const [cart, setCart] = useState([]);
     function handleAddProduct(product) {
         const newCount = [...cart, product];
-        setCart(newCount)
+        setCart(newCount);
+        const sameProduct = newCount.filter(pd => pd.key === product.key);
+        const count = sameProduct.length;
+        addToDatabaseCart(product.key, count)
     }
     return (
         <div className='shop-container'>
             <div className="product-container">
                 {
-                    first10.map(pd => <Product products={pd} addProduct={handleAddProduct}></Product>)
+                    first10.map(pd => <Product key={pd.key} showAddToCart={true} products={pd} addProduct={handleAddProduct}></Product>)
                 }
             </div>
             <div className="cart-container">
