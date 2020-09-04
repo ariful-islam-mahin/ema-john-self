@@ -7,7 +7,7 @@ const Cart = (props) => {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
-        total = total + product.price  
+        total = total + product.price * product.quantity 
     }
     let shipping = 0;
     if(total > 200){
@@ -52,9 +52,9 @@ const Cart = (props) => {
                     </tbody>
                 </table>
                 <br/>
-                <Link to='/order'>
-                  <button className='main-button'>Order Review</button>
-                </Link>
+                {
+                    props.children
+                }
         </div>
     );
 };
